@@ -10,6 +10,7 @@
     "css": "sass"
   },
   "scripts": {
+    "start":"node index.js"
     "dev": "npx taro build --type h5 --watch",
     "dev:h5": "npx taro build --type h5 --watch",
     "dev:weapp": "npx taro build --type weapp --watch",
