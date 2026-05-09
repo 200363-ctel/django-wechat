@@ -1,15 +1,20 @@
-FROM python:3.10-slim
+# 匹配项目的Node版本，用稳定镜像
+FROM node:18-alpine
 
+# 设置容器工作目录
 WORKDIR /app
 
-# 假设你的项目代码都在仓库里的 myproject 子文件夹
-COPY ./myproject /app
+# 先复制依赖锁文件，缓存安装层
+COPY package*.json ./
 
-COPY requirements.txt /app/
+# 安装项目依赖
+RUN npm install
 
-RUN pip install --no-cache-dir -r requirements.txt
+# 复制全部项目代码
+COPY . .
 
+# 端口和云托管页面统一为8080
 EXPOSE 8080
 
-# 确保manage.py在当前目录
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8080"]
+# 启动命令（绝大多数Node后端默认启动是npm start）
+CMD ["npm", "start"]
