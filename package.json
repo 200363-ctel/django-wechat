@@ -10,15 +10,15 @@
     "css": "sass"
   },
   "scripts": {
-    "start": "node index.js"
-    "dev": "npx taro build --type h5 --watch",
-    "dev:h5": "npx taro build --type h5 --watch",
-    "dev:weapp": "npx taro build --type weapp --watch",
-    "build": "npx taro build --type h5",
-    "build:weapp": "npx taro build --type weapp",
-    "postinstall": "weapp-tw patch",
-    "lint": "./scripts/runLint.sh"
-  }，
+  "start": "node index.js",
+  "dev": "npx taro build --type h5 --watch",
+  "dev:h5": "npx taro build --type h5 --watch",
+  "dev:weapp": "npx taro build --type weapp --watch",
+  "build": "npx taro build --type h5",
+  "build:weapp": "npx taro build --type weapp",
+  "postinstall": "weapp-tw patch",
+  "lint": "./scripts/runLint.sh"
+},
   "browserslist": [
     "last 5 years",
     "Android >= 9",
